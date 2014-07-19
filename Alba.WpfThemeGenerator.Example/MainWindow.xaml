@@ -3,14 +3,32 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <UIElement.RenderTransform>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="110"/>
+        </Grid.ColumnDefinitions>
+        <!--<UIElement.RenderTransform>
             <ScaleTransform ScaleX="3" ScaleY="3"/>
-        </UIElement.RenderTransform>
-        <GroupBox Header="Button" Width="100" HorizontalAlignment="Left">
+        </UIElement.RenderTransform>-->
+        <GroupBox Grid.Column="0" Header="Button" Margin="2">
             <StackPanel>
-                <Button Content="Normal"/>
-                <ToggleButton Content="Checked" IsChecked="True"/>
-                <Button Content="Disabled" IsEnabled="False"/>
+                <Button Content="Normal" Margin="2"/>
+                <ToggleButton Content="Checked" IsChecked="True" Margin="2"/>
+                <Button Content="Disabled" IsEnabled="False" Margin="2"/>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Grid.Column="1" Header="CheckBox" Margin="2">
+            <StackPanel>
+                <CheckBox Content="Unchecked" IsChecked="False" Margin="2"/>
+                <CheckBox Content="Intermediate" IsChecked="{x:Null}" IsThreeState="True" Margin="2"/>
+                <CheckBox Content="Checked" IsChecked="True" Margin="2"/>
+                <CheckBox Content="Disabled" IsEnabled="False" Margin="2"/>
+                <StackPanel Orientation="Horizontal">
+                    <CheckBox IsChecked="False" Margin="2"/>
+                    <CheckBox IsChecked="{x:Null}" IsThreeState="True" Margin="2"/>
+                    <CheckBox IsChecked="True" IsThreeState="True" Margin="2"/>
+                    <CheckBox IsEnabled="False" Margin="2"/>
+                </StackPanel>
             </StackPanel>
         </GroupBox>
     </Grid>

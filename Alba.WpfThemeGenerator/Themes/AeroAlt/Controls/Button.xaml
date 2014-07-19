@@ -7,42 +7,32 @@
 
     <!-- Background -->
     <LinearGradientBrush x:Key="ButtonNormalBackground" StartPoint="0,0" EndPoint="0,1">
-        <LinearGradientBrush.GradientStops>
-            <GradientStop Color="#F3F3F3" Offset="0"/>
-            <GradientStop Color="#EBEBEB" Offset="0.5"/>
-            <GradientStop Color="#DDDDDD" Offset="0.5"/>
-            <GradientStop Color="#CDCDCD" Offset="1"/>
-        </LinearGradientBrush.GradientStops>
+        <GradientStop Color="#F3F3F3" Offset="0"/>
+        <GradientStop Color="#EBEBEB" Offset="0.5"/>
+        <GradientStop Color="#DDDDDD" Offset="0.5"/>
+        <GradientStop Color="#CDCDCD" Offset="1"/>
     </LinearGradientBrush>
     <!-- Background overlay -->
     <LinearGradientBrush x:Key="ButtonHoverBackgroundOverlay" StartPoint="0,0" EndPoint="0,1">
-        <LinearGradientBrush.GradientStops>
-            <GradientStop Color="#EAF6FD" Offset="0"/>
-            <GradientStop Color="#D9F0FC" Offset="0.5"/>
-            <GradientStop Color="#BEE6FD" Offset="0.5"/>
-            <GradientStop Color="#A7D9F5" Offset="1"/>
-        </LinearGradientBrush.GradientStops>
+        <GradientStop Color="#EAF6FD" Offset="0"/>
+        <GradientStop Color="#D9F0FC" Offset="0.5"/>
+        <GradientStop Color="#BEE6FD" Offset="0.5"/>
+        <GradientStop Color="#A7D9F5" Offset="1"/>
     </LinearGradientBrush>
     <LinearGradientBrush x:Key="ButtonPressedBackgroundOverlay" StartPoint="0,0" EndPoint="0,1">
-        <LinearGradientBrush.GradientStops>
-            <GradientStop Color="#C2E4F6" Offset="0.5"/>
-            <GradientStop Color="#ABDAF3" Offset="0.5"/>
-            <GradientStop Color="#90CBEB" Offset="1"/>
-        </LinearGradientBrush.GradientStops>
+        <GradientStop Color="#C2E4F6" Offset="0.5"/>
+        <GradientStop Color="#ABDAF3" Offset="0.5"/>
+        <GradientStop Color="#90CBEB" Offset="1"/>
     </LinearGradientBrush>
     <SolidColorBrush x:Key="ButtonDisabledBackgroundOverlay" Color="#F4F4F4"/>
     <!-- Inner shadow -->
     <LinearGradientBrush x:Key="ButtonPressedLeftDropShadow" StartPoint="0,0" EndPoint="1,0">
-        <LinearGradientBrush.GradientStops>
-            <GradientStop Color="#80333333" Offset="0"/>
-            <GradientStop Color="#00333333" Offset="1"/>
-        </LinearGradientBrush.GradientStops>
+        <GradientStop Color="#80333333" Offset="0"/>
+        <GradientStop Color="#00333333" Offset="1"/>
     </LinearGradientBrush>
     <LinearGradientBrush x:Key="ButtonPressedTopDropShadow" StartPoint="0,0" EndPoint="0,1">
-        <LinearGradientBrush.GradientStops>
-            <GradientStop Color="#80333333" Offset="0"/>
-            <GradientStop Color="#00333333" Offset="1"/>
-        </LinearGradientBrush.GradientStops>
+        <GradientStop Color="#80333333" Offset="0"/>
+        <GradientStop Color="#00333333" Offset="1"/>
     </LinearGradientBrush>
     <!-- Border -->
     <SolidColorBrush x:Key="ButtonNormalBorder" Color="#707070"/>
@@ -52,10 +42,8 @@
     <SolidColorBrush x:Key="ButtonDisabledBorderOverlay" Color="#ADB2B5"/>
     <!-- Inner border -->
     <LinearGradientBrush x:Key="ButtonInnerBorder" StartPoint="0,0" EndPoint="0,1">
-        <LinearGradientBrush.GradientStops>
-            <GradientStop Color="#FAFFFFFF" Offset="0"/>
-            <GradientStop Color="#85FFFFFF" Offset="1"/>
-        </LinearGradientBrush.GradientStops>
+        <GradientStop Color="#FAFFFFFF" Offset="0"/>
+        <GradientStop Color="#85FFFFFF" Offset="1"/>
     </LinearGradientBrush>
     <SolidColorBrush x:Key="ButtonDefaultedInnerBorder" Color="#F900CCFF"/>
     <!-- Foreground -->
@@ -67,7 +55,7 @@
         <Setter Property="Control.Template">
             <Setter.Value>
                 <ControlTemplate>
-                    <Rectangle Margin="2" SnapsToDevicePixels="true"
+                    <Rectangle Margin="2" SnapsToDevicePixels="True"
                             StrokeThickness="1" StrokeDashArray="1 2" Stroke="{xx:SystemBrush ControlText}"/>
                 </ControlTemplate>
             </Setter.Value>
@@ -78,6 +66,7 @@
         <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
         <Setter Property="Background" Value="{StaticResource ButtonNormalBackground}"/>
         <Setter Property="BorderBrush" Value="{StaticResource ButtonNormalBorder}"/>
+        <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="Foreground" Value="{xx:SystemBrush ControlText}"/>
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
@@ -131,7 +120,7 @@
                         </DataTrigger>
                         <Trigger Property="IsEnabled" Value="False">
                             <!-- if (!IsEnabled) -->
-                            <Setter Property="Foreground" Value="{StaticResource ButtonDisabledForeground}"/>
+                            <Setter Property="Foreground" Value="{xx:SystemBrush GrayText}"/>
                             <Setter TargetName="BackgroundOverlay" Property="Fill" Value="{StaticResource ButtonDisabledBackgroundOverlay}"/>
                             <Setter TargetName="LeftShadow" Property="Fill" Value="{x:Null}"/>
                             <Setter TargetName="TopShadow" Property="Fill" Value="{x:Null}"/>
