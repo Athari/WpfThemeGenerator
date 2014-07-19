@@ -1,0 +1,17 @@
+﻿<Window x:Class="Alba.WpfThemeGenerator.Example.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <UIElement.RenderTransform>
+            <ScaleTransform ScaleX="3" ScaleY="3"/>
+        </UIElement.RenderTransform>
+        <GroupBox Header="Button" Width="100" HorizontalAlignment="Left">
+            <StackPanel>
+                <Button Content="Normal"/>
+                <ToggleButton Content="Checked" IsChecked="True"/>
+                <Button Content="Disabled" IsEnabled="False"/>
+            </StackPanel>
+        </GroupBox>
+    </Grid>
+</Window>
