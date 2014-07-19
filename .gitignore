@@ -1,0 +1,14 @@
+# VisualStudio's user settings
+*.suo
+*.DotSettings.user
+*.csproj.user
+
+# Binaries
+/Packages/
+/.nuget/NuGet.exe
+
+# Output & intermediate
+/TestResults/
+/Tmp/
+/bin/
+/obj/
