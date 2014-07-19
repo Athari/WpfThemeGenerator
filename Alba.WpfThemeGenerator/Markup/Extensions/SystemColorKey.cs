@@ -1,0 +1,36 @@
+﻿namespace Alba.WpfThemeGenerator.Markup
+{
+    public enum SystemColorKey
+    {
+        ActiveBorder,
+        ActiveCaption,
+        ActiveCaptionText,
+        AppWorkspace,
+        Control,
+        ControlDark,
+        ControlDarkDark,
+        ControlLight,
+        ControlLightLight,
+        ControlText,
+        Desktop,
+        GradientActiveCaption,
+        GradientInactiveCaption,
+        GrayText,
+        Highlight,
+        HighlightText,
+        HotTrack,
+        InactiveBorder,
+        InactiveCaption,
+        InactiveCaptionText,
+        Info,
+        InfoText,
+        Menu,
+        MenuBar,
+        MenuHighlight,
+        MenuText,
+        ScrollBar,
+        Window,
+        WindowFrame,
+        WindowText,
+    }
+}

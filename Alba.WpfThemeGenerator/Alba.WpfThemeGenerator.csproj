@@ -49,6 +49,10 @@
     <Reference Include="PresentationUI" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Themes\AeroAlt\Controls\Button.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\Generic.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -59,6 +63,12 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Markup\Converters\Converters.cs" />
+    <Compile Include="Markup\Converters\OrConverter.cs" />
+    <Compile Include="Markup\Extensions\SystemBrushExtension.cs" />
+    <Compile Include="Markup\Extensions\SystemBrushKey.cs" />
+    <Compile Include="Markup\Extensions\SystemColorExtension.cs" />
+    <Compile Include="Markup\Extensions\SystemColorKey.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
