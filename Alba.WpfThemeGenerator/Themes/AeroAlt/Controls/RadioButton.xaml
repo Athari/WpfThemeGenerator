@@ -103,8 +103,6 @@
                             <!-- if (IsPressed) -->
                             <Setter TargetName="BackgroundOverlay" Property="Fill" Value="{StaticResource Bullet.BackgroundOverlay.Pressed}"/>
                             <Setter TargetName="InnerFill" Property="Fill" Value="{StaticResource Bullet.InnerFill.Pressed}"/>
-                            <Setter TargetName="Glyph" Property="Stroke" Value="{StaticResource RadioButton.Glyph.Stroke.Normal}"/>
-                            <Setter TargetName="Glyph" Property="Fill" Value="{StaticResource RadioButton.Glyph.Fill.Pressed}"/>
                             <Setter TargetName="BorderOverlay" Property="Stroke" Value="{StaticResource Bullet.BorderOverlay.Pressed}"/>
                             <Setter TargetName="InnerBorder" Property="Stroke" Value="{StaticResource RadioButton.InnerBorder.Pressed}"/>
                         </Trigger>
