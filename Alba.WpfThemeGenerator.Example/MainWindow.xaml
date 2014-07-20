@@ -55,8 +55,9 @@
         <GroupBox Grid.Column="3" Header="TextBox" Margin="2">
             <StackPanel>
                 <TextBox Text="Normal" Margin="2"/>
-                <TextBox Text="Selected" SelectionStart="1" SelectionLength="6" IsInactiveSelectionHighlightEnabled="True" Margin="2"/>
                 <TextBox Text="Disabled" IsEnabled="False" Margin="2"/>
+                <PasswordBox Password="Normal" Margin="2"/>
+                <PasswordBox Password="Disabled" IsEnabled="False" Margin="2"/>
             </StackPanel>
         </GroupBox>
     </Grid>

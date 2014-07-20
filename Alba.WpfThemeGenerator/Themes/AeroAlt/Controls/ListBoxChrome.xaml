@@ -5,6 +5,12 @@
 
     <!-- Colors -->
 
+    <!-- Border -->
+    <LinearGradientBrush x:Key="ListBoxChrome.Border.Normal" StartPoint="0,0" EndPoint="0,20" MappingMode="Absolute">
+        <GradientStop Color="#ABADB3" Offset="0.05"/>
+        <GradientStop Color="#E2E3EA" Offset="0.07"/>
+        <GradientStop Color="#E3E9EF" Offset="1"/>
+    </LinearGradientBrush>
     <!-- Background overlay -->
     <SolidColorBrush x:Key="ListBoxChrome.BackgroundOverlay.Disabled" Color="#F4F4F4"/>
     <!-- Border overlay -->
@@ -27,7 +33,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ContentControl}">
-                    <Grid>
+                    <Grid SnapsToDevicePixels="True">
                         <Rectangle x:Name="Background" Margin="1" Fill="{TemplateBinding Background}"/>
                         <Rectangle x:Name="BackgroundOverlay" Margin="2" RadiusX="1" RadiusY="1"/>
                         <Rectangle x:Name="Border" Margin="0" Stroke="{TemplateBinding BorderBrush}" RadiusX="1" RadiusY="1"/>
