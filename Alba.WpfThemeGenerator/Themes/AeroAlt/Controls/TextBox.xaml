@@ -1,0 +1,84 @@
+﻿<ResourceDictionary
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:xx="clr-namespace:Alba.WpfThemeGenerator.Markup"
+        xmlns:th="clr-namespace:Alba.WpfThemeGenerator.Themes">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="ListBoxChrome.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <!-- Colors -->
+
+    <LinearGradientBrush x:Key="TextBoxBorder" StartPoint="0,0" EndPoint="0,20" MappingMode="Absolute">
+        <GradientStop Color="#ABADB3" Offset="0.05"/>
+        <GradientStop Color="#E2E3EA" Offset="0.07"/>
+        <GradientStop Color="#E3E9EF" Offset="1"/>
+    </LinearGradientBrush>
+
+    <!-- Styles -->
+
+    <Style x:Key="{x:Type TextBoxBase}" TargetType="{x:Type TextBoxBase}" BasedOn="{x:Null}">
+        <Setter Property="Foreground" Value="{xx:SystemBrush ControlText}"/>
+        <Setter Property="Background" Value="{xx:SystemBrush Window}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource TextBoxBorder}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="AllowDrop" Value="True"/>
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
+        <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBoxBase}">
+                    <ContentControl x:Name="Chrome" Style="{StaticResource ListBoxChrome}" SnapsToDevicePixels="True"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            Background="{TemplateBinding Background}"
+                            th:Chrome.IsHover="{TemplateBinding IsMouseOver}"
+                            th:Chrome.IsFocused="{TemplateBinding IsKeyboardFocusWithin}">
+                        <ScrollViewer x:Name="PART_ContentHost" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                    </ContentControl>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="Chrome" Property="Background" Value="{xx:SystemBrush Control}"/>
+                            <Setter Property="Foreground" Value="{xx:SystemBrush GrayText}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <MultiTrigger>
+                <!-- if (IsInactiveSelectionHighlightEnabled && IsSelectionActive) -->
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsInactiveSelectionHighlightEnabled" Value="True"/>
+                    <Condition Property="IsSelectionActive" Value="False"/>
+                </MultiTrigger.Conditions>
+                <Setter Property="SelectionBrush" Value="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+            </MultiTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="{x:Type TextBox}" BasedOn="{StaticResource {x:Type TextBoxBase}}" TargetType="{x:Type TextBox}"/>
+
+    <Style x:Key="{x:Type RichTextBox}" BasedOn="{StaticResource {x:Type TextBoxBase}}" TargetType="{x:Type RichTextBox}">
+        <Style.Resources>
+            <Style x:Key="{x:Type FlowDocument}" TargetType="{x:Type FlowDocument}">
+                <Setter Property="OverridesDefaultStyle" Value="True"/>
+            </Style>
+            <Style x:Key="{x:Type Hyperlink}" BasedOn="{StaticResource {x:Type Hyperlink}}" TargetType="{x:Type Hyperlink}">
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="Foreground" Value="Blue"/>
+                    </Trigger>
+                    <Trigger Property="IsEnabled" Value="False">
+                        <Setter Property="Foreground" Value="{xx:SystemBrush GrayText}"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </Style.Resources>
+        <Setter Property="MinWidth" Value="10"/>
+    </Style>
+
+</ResourceDictionary>
