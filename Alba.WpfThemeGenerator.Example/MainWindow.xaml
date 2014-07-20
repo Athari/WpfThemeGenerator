@@ -16,7 +16,7 @@
             <StackPanel>
                 <Button Content="Normal" Margin="2"/>
                 <ToggleButton Content="Indeterminate" IsChecked="{x:Null}" IsThreeState="True" Margin="2"/>
-                <ToggleButton Content="Checked" IsChecked="True" Margin="2"/>
+                <ToggleButton Content="_Checked" IsChecked="True" Margin="2"/>
                 <Button Content="Disabled" IsEnabled="False" Margin="2"/>
             </StackPanel>
         </GroupBox>

@@ -1,57 +1,16 @@
 ﻿<ResourceDictionary
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:xx="clr-namespace:Alba.WpfThemeGenerator.Markup">
+        xmlns:xx="clr-namespace:Alba.WpfThemeGenerator.Markup"
+        xmlns:th="clr-namespace:Alba.WpfThemeGenerator.Themes">
 
-    <!-- Brushes -->
-
-    <!-- Background -->
-    <LinearGradientBrush x:Key="ButtonNormalBackground" StartPoint="0,0" EndPoint="0,1">
-        <GradientStop Color="#F3F3F3" Offset="0"/>
-        <GradientStop Color="#EBEBEB" Offset="0.5"/>
-        <GradientStop Color="#DDDDDD" Offset="0.5"/>
-        <GradientStop Color="#CDCDCD" Offset="1"/>
-    </LinearGradientBrush>
-    <!-- Background overlay -->
-    <LinearGradientBrush x:Key="ButtonHoverBackgroundOverlay" StartPoint="0,0" EndPoint="0,1">
-        <GradientStop Color="#EAF6FD" Offset="0"/>
-        <GradientStop Color="#D9F0FC" Offset="0.5"/>
-        <GradientStop Color="#BEE6FD" Offset="0.5"/>
-        <GradientStop Color="#A7D9F5" Offset="1"/>
-    </LinearGradientBrush>
-    <LinearGradientBrush x:Key="ButtonPressedBackgroundOverlay" StartPoint="0,0" EndPoint="0,1">
-        <GradientStop Color="#C2E4F6" Offset="0.5"/>
-        <GradientStop Color="#ABDAF3" Offset="0.5"/>
-        <GradientStop Color="#90CBEB" Offset="1"/>
-    </LinearGradientBrush>
-    <SolidColorBrush x:Key="ButtonDisabledBackgroundOverlay" Color="#F4F4F4"/>
-    <!-- Inner shadow -->
-    <LinearGradientBrush x:Key="ButtonPressedLeftDropShadow" StartPoint="0,0" EndPoint="1,0">
-        <GradientStop Color="#80333333" Offset="0"/>
-        <GradientStop Color="#00333333" Offset="1"/>
-    </LinearGradientBrush>
-    <LinearGradientBrush x:Key="ButtonPressedTopDropShadow" StartPoint="0,0" EndPoint="0,1">
-        <GradientStop Color="#80333333" Offset="0"/>
-        <GradientStop Color="#00333333" Offset="1"/>
-    </LinearGradientBrush>
-    <!-- Border -->
-    <SolidColorBrush x:Key="ButtonNormalBorder" Color="#707070"/>
-    <!-- Border overlay -->
-    <SolidColorBrush x:Key="ButtonHoverBorderOverlay" Color="#3C7FB1"/>
-    <SolidColorBrush x:Key="ButtonPressedBorderOverlay" Color="#2C628B"/>
-    <SolidColorBrush x:Key="ButtonDisabledBorderOverlay" Color="#ADB2B5"/>
-    <!-- Inner border -->
-    <LinearGradientBrush x:Key="ButtonInnerBorder" StartPoint="0,0" EndPoint="0,1">
-        <GradientStop Color="#FAFFFFFF" Offset="0"/>
-        <GradientStop Color="#85FFFFFF" Offset="1"/>
-    </LinearGradientBrush>
-    <SolidColorBrush x:Key="ButtonDefaultedInnerBorder" Color="#F900CCFF"/>
-    <!-- Foreground -->
-    <SolidColorBrush x:Key="ButtonDisabledForeground" Color="#ADADAD"/>
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="ButtonChrome.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
 
     <!-- Styles -->
 
-    <Style x:Key="ButtonFocusVisual">
+    <Style x:Key="Button.FocusVisual">
         <Setter Property="Control.Template">
             <Setter.Value>
                 <ControlTemplate>
@@ -63,9 +22,9 @@
     </Style>
 
     <Style x:Key="BaseButtonStyle" TargetType="{x:Type ButtonBase}">
-        <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
-        <Setter Property="Background" Value="{StaticResource ButtonNormalBackground}"/>
-        <Setter Property="BorderBrush" Value="{StaticResource ButtonNormalBorder}"/>
+        <Setter Property="FocusVisualStyle" Value="{StaticResource Button.FocusVisual}"/>
+        <Setter Property="Background" Value="{StaticResource Button.Background.Normal}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource Button.Border.Normal}"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="Foreground" Value="{xx:SystemBrush ControlText}"/>
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
@@ -74,59 +33,27 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ButtonBase}">
-                    <Grid SnapsToDevicePixels="True">
-                        <Rectangle x:Name="Background" Margin="1" Fill="{TemplateBinding Background}"/>
-                        <Rectangle x:Name="BackgroundOverlay" Margin="1"/>
-                        <Rectangle x:Name="LeftShadow" Margin="1" Width="2" HorizontalAlignment="Left"/>
-                        <Rectangle x:Name="TopShadow" Margin="1" Height="2" VerticalAlignment="Top"/>
-                        <Rectangle x:Name="Border" Margin="0" Stroke="{TemplateBinding BorderBrush}" StrokeThickness="1" RadiusX="2.75" RadiusY="2.75"/>
-                        <Rectangle x:Name="BorderOverlay" Margin="0" StrokeThickness="1" RadiusX="2.75" RadiusY="2.75"/>
-                        <Rectangle x:Name="InnerBorder" Margin="1" Stroke="{StaticResource ButtonInnerBorder}" RadiusX="1.75" RadiusY="1.75"/>
-                        <Border Margin="2">
-                            <ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Margin="{TemplateBinding Padding}"
-                                    VerticalAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                    RecognizesAccessKey="True"/>
-                        </Border>
-                    </Grid>
+                    <ContentControl x:Name="Chrome" Style="{StaticResource ButtonChrome}"
+                            SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                            HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                            Padding="{TemplateBinding Padding}"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            th:Chrome.IsDefaulted="{TemplateBinding Button.IsDefaulted}"
+                            th:Chrome.IsHover="{TemplateBinding IsMouseOver}"
+                            th:Chrome.IsPressed="{TemplateBinding IsPressed}">
+                        <ContentPresenter RecognizesAccessKey="True"/>
+                    </ContentControl>
                     <ControlTemplate.Triggers>
-                        <DataTrigger Value="True">
-                            <!-- if (IsDefaulted || IsKeyboardFocused) -->
-                            <DataTrigger.Binding>
-                                <MultiBinding Converter="{x:Static xx:Converters.Or}">
-                                    <Binding Path="(Button.IsDefaulted)" RelativeSource="{RelativeSource Self}"/>
-                                    <Binding Path="IsKeyboardFocused" RelativeSource="{RelativeSource Self}"/>
-                                </MultiBinding>
-                            </DataTrigger.Binding>
-                            <Setter TargetName="InnerBorder" Property="Stroke" Value="{StaticResource ButtonDefaultedInnerBorder}"/>
-                        </DataTrigger>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <!-- if (IsMouseOver) -->
-                            <Setter TargetName="BackgroundOverlay" Property="Fill" Value="{StaticResource ButtonHoverBackgroundOverlay}"/>
-                            <Setter TargetName="BorderOverlay" Property="Stroke" Value="{StaticResource ButtonHoverBorderOverlay}"/>
+                        <Trigger Property="IsKeyboardFocused" Value="True">
+                            <Setter TargetName="Chrome" Property="th:Chrome.IsDefaulted" Value="True"/>
                         </Trigger>
-                        <DataTrigger Value="True">
-                            <!-- if (IsPressed || IsChecked) -->
-                            <DataTrigger.Binding>
-                                <MultiBinding Converter="{x:Static xx:Converters.Or}">
-                                    <Binding Path="IsPressed" RelativeSource="{RelativeSource Self}"/>
-                                    <Binding Path="(ToggleButton.IsChecked)" RelativeSource="{RelativeSource Self}"/>
-                                </MultiBinding>
-                            </DataTrigger.Binding>
-                            <Setter TargetName="BackgroundOverlay" Property="Fill" Value="{StaticResource ButtonPressedBackgroundOverlay}"/>
-                            <Setter TargetName="LeftShadow" Property="Fill" Value="{StaticResource ButtonPressedLeftDropShadow}"/>
-                            <Setter TargetName="TopShadow" Property="Fill" Value="{StaticResource ButtonPressedTopDropShadow}"/>
-                            <Setter TargetName="BorderOverlay" Property="Stroke" Value="{StaticResource ButtonPressedBorderOverlay}"/>
-                            <Setter TargetName="InnerBorder" Property="Stroke" Value="{x:Null}"/>
-                        </DataTrigger>
+                        <Trigger Property="ToggleButton.IsChecked" Value="True">
+                            <Setter TargetName="Chrome" Property="th:Chrome.IsPressed" Value="True"/>
+                        </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
-                            <!-- if (!IsEnabled) -->
-                            <Setter Property="Foreground" Value="{xx:SystemBrush GrayText}"/>
-                            <Setter TargetName="BackgroundOverlay" Property="Fill" Value="{StaticResource ButtonDisabledBackgroundOverlay}"/>
-                            <Setter TargetName="LeftShadow" Property="Fill" Value="{x:Null}"/>
-                            <Setter TargetName="TopShadow" Property="Fill" Value="{x:Null}"/>
-                            <Setter TargetName="Border" Property="Stroke" Value="{x:Null}"/>
-                            <Setter TargetName="BorderOverlay" Property="Stroke" Value="{StaticResource ButtonDisabledBorderOverlay}"/>
-                            <Setter TargetName="InnerBorder" Property="Stroke" Value="{StaticResource ButtonInnerBorder}"/>
+                            <Setter Property="Foreground" Value="{StaticResource Button.Foreground.Disabled}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -138,7 +65,7 @@
     <Style x:Key="{x:Type ToggleButton}" TargetType="{x:Type ToggleButton}" BasedOn="{StaticResource BaseButtonStyle}"/>
 
     <Style x:Key="{x:Type RepeatButton}" TargetType="{x:Type RepeatButton}" BasedOn="{StaticResource BaseButtonStyle}">
-        <Setter Property="Stylus.IsPressAndHoldEnabled" Value="false"/>
+        <Setter Property="Stylus.IsPressAndHoldEnabled" Value="False"/>
     </Style>
 
     <Style x:Key="{x:Type Button}" TargetType="{x:Type Button}" BasedOn="{StaticResource BaseButtonStyle}"/>
