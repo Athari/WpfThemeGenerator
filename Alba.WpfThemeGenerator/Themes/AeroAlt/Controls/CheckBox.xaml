@@ -160,15 +160,6 @@
                             <Setter TargetName="InnerBorder" Property="Stroke" Value="{StaticResource CheckBoxIndeterminatePressedInnerBorder}"/>
                         </MultiTrigger>
                         <MultiTrigger>
-                            <!-- if (IsChecked == false && IsPressed) -->
-                            <MultiTrigger.Conditions>
-                                <Condition Property="IsChecked" Value="False"/>
-                                <Condition Property="IsPressed" Value="True"/>
-                            </MultiTrigger.Conditions>
-                            <Setter TargetName="GlyphStroke" Property="Stroke" Value="{StaticResource CheckBoxCheckMarkPressedStroke}"/>
-                            <Setter TargetName="GlyphFill" Property="Fill" Value="{StaticResource CheckBoxCheckMarkPressedFill}"/>
-                        </MultiTrigger>
-                        <MultiTrigger>
                             <!-- if (IsChecked == true && IsPressed) -->
                             <MultiTrigger.Conditions>
                                 <Condition Property="IsChecked" Value="True"/>
