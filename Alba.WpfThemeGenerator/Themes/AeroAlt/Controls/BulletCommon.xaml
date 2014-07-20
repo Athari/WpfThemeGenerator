@@ -6,59 +6,59 @@
     <!-- Colors -->
 
     <!-- Background overlay -->
-    <SolidColorBrush x:Key="BulletHoverBackgroundOverlay" Color="#DEF9FA"/>
-    <SolidColorBrush x:Key="BulletPressedBackgroundOverlay" Color="#C2E4F6"/>
-    <SolidColorBrush x:Key="BulletDisabledBackgroundOverlay" Color="#F4F4F4"/>
+    <SolidColorBrush x:Key="Bullet.BackgroundOverlay.Hover" Color="#DEF9FA"/>
+    <SolidColorBrush x:Key="Bullet.BackgroundOverlay.Pressed" Color="#C2E4F6"/>
+    <SolidColorBrush x:Key="Bullet.BackgroundOverlay.Disabled" Color="#F4F4F4"/>
     <!-- Border overlay -->
-    <SolidColorBrush x:Key="BulletHoverBorderOverlay" Color="#3C7FB1"/>
-    <SolidColorBrush x:Key="BulletPressedBorderOverlay" Color="#2C628B"/>
-    <SolidColorBrush x:Key="BulletDisabledBorderOverlay" Color="#ADB2B5"/>
+    <SolidColorBrush x:Key="Bullet.BorderOverlay.Hover" Color="#3C7FB1"/>
+    <SolidColorBrush x:Key="Bullet.BorderOverlay.Pressed" Color="#2C628B"/>
+    <SolidColorBrush x:Key="Bullet.BorderOverlay.Disabled" Color="#ADB2B5"/>
     <!-- Inner border -->
-    <LinearGradientBrush x:Key="BulletDisabledInnerBorder" StartPoint="0,0" EndPoint="1,1">
+    <LinearGradientBrush x:Key="Bullet.InnerBorder.Disabled" StartPoint="0,0" EndPoint="1,1">
         <GradientStop Color="#E1E3E5" Offset="0.25"/>
         <GradientStop Color="#E8E9EA" Offset="0.5"/>
         <GradientStop Color="#F3F3F3" Offset="1"/>
     </LinearGradientBrush>
     <!-- Indeterminate inner border -->
-    <LinearGradientBrush x:Key="BulletIndeterminateDisabledInnerBorder" StartPoint="0,0" EndPoint="1,1">
+    <LinearGradientBrush x:Key="Bullet.InnerBorder.IndeterminateDisabled" StartPoint="0,0" EndPoint="1,1">
         <GradientStop Color="#BFD0DD" Offset="0"/>
         <GradientStop Color="#BDCBD7" Offset="0.5"/>
         <GradientStop Color="#BAC4CC" Offset="1"/>
     </LinearGradientBrush>
     <!-- Inner fill -->
-    <LinearGradientBrush x:Key="BulletInnerFill" StartPoint="0,0" EndPoint="1,1">
+    <LinearGradientBrush x:Key="Bullet.InnerFill.Normal" StartPoint="0,0" EndPoint="1,1">
         <GradientStop Color="#CBCFD5" Offset="0.2"/>
         <GradientStop Color="#F7F7F7" Offset="0.8"/>
     </LinearGradientBrush>
-    <LinearGradientBrush x:Key="BulletHoverInnerFill" StartPoint="0,0" EndPoint="1,1">
+    <LinearGradientBrush x:Key="Bullet.InnerFill.Hover" StartPoint="0,0" EndPoint="1,1">
         <GradientStop Color="#B1DFFD" Offset="0.2"/>
         <GradientStop Color="#E9F7FE" Offset="0.8"/>
     </LinearGradientBrush>
-    <LinearGradientBrush x:Key="BulletPressedInnerFill" StartPoint="0,0" EndPoint="1,1">
+    <LinearGradientBrush x:Key="Bullet.InnerFill.Pressed" StartPoint="0,0" EndPoint="1,1">
         <GradientStop Color="#7FBADC" Offset="0.2"/>
         <GradientStop Color="#D6EDF9" Offset="0.8"/>
     </LinearGradientBrush>
     <!-- Indeterminate fill -->
-    <LinearGradientBrush x:Key="BulletIndeterminateFill" StartPoint="0,0" EndPoint="1,1">
+    <LinearGradientBrush x:Key="Bullet.Fill.Indeterminate" StartPoint="0,0" EndPoint="1,1">
         <GradientStop Color="#2FA8D5" Offset="0.2"/>
         <GradientStop Color="#25598C" Offset="0.8"/>
     </LinearGradientBrush>
-    <LinearGradientBrush x:Key="BulletIndeterminateHoverFill" StartPoint="0,0" EndPoint="1,1">
+    <LinearGradientBrush x:Key="Bullet.Fill.IndeterminateHover" StartPoint="0,0" EndPoint="1,1">
         <GradientStop Color="#33D7ED" Offset="0.2"/>
         <GradientStop Color="#2094CE" Offset="0.8"/>
     </LinearGradientBrush>
-    <LinearGradientBrush x:Key="BulletIndeterminatePressedFill" StartPoint="0,0" EndPoint="1,1">
+    <LinearGradientBrush x:Key="Bullet.Fill.IndeterminatePressed" StartPoint="0,0" EndPoint="1,1">
         <GradientStop Color="#17447A" Offset="0.2"/>
         <GradientStop Color="#218BC3" Offset="0.8"/>
     </LinearGradientBrush>
-    <LinearGradientBrush x:Key="BulletIndeterminateDisabledFill" StartPoint="0,0" EndPoint="1,1">
+    <LinearGradientBrush x:Key="Bullet.Fill.IndeterminateDisabled" StartPoint="0,0" EndPoint="1,1">
         <GradientStop Color="#C0E5F3" Offset="0.2"/>
         <GradientStop Color="#BDCDDC" Offset="0.8"/>
     </LinearGradientBrush>
 
     <!-- Styles -->
 
-    <Style x:Key="BulletFocusVisual">
+    <Style x:Key="Bullet.FocusVisual.Normal">
         <Setter Property="Control.Template">
             <Setter.Value>
                 <ControlTemplate>
@@ -69,7 +69,7 @@
         </Setter>
     </Style>
 
-    <Style x:Key="EmptyBulletFocusVisual">
+    <Style x:Key="Bullet.FocusVisual.Empty">
         <Setter Property="Control.Template">
             <Setter.Value>
                 <ControlTemplate>

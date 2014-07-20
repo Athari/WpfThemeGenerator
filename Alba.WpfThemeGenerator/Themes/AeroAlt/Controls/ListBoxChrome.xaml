@@ -6,19 +6,19 @@
     <!-- Colors -->
 
     <!-- Background overlay -->
-    <SolidColorBrush x:Key="ListBoxChromeDisabledBackgroundOverlay" Color="#F4F4F4"/>
+    <SolidColorBrush x:Key="ListBoxChrome.BackgroundOverlay.Disabled" Color="#F4F4F4"/>
     <!-- Border overlay -->
-    <LinearGradientBrush x:Key="ListBoxChromeHoverBorderOverlay" StartPoint="0,0" EndPoint="0,20" MappingMode="Absolute">
+    <LinearGradientBrush x:Key="ListBoxChrome.BorderOverlay.Hover" StartPoint="0,0" EndPoint="0,20" MappingMode="Absolute">
         <GradientStop Color="#5794BF" Offset="0.05"/>
         <GradientStop Color="#B7D5EA" Offset="0.07"/>
         <GradientStop Color="#C7E2F1" Offset="1"/>
     </LinearGradientBrush>
-    <LinearGradientBrush x:Key="ListBoxChromeFocusedBorderOverlay" StartPoint="0,0" EndPoint="0,20" MappingMode="Absolute">
+    <LinearGradientBrush x:Key="ListBoxChrome.BorderOverlay.Focused" StartPoint="0,0" EndPoint="0,20" MappingMode="Absolute">
         <GradientStop Color="#3D7BAD" Offset="0.05"/>
         <GradientStop Color="#A4C9E3" Offset="0.07"/>
         <GradientStop Color="#B7D9ED" Offset="1"/>
     </LinearGradientBrush>
-    <SolidColorBrush x:Key="ListBoxChromeDisabledBorderOverlay" Color="#ADB2B5"/>
+    <SolidColorBrush x:Key="ListBoxChrome.BorderOverlay.Disabled" Color="#ADB2B5"/>
 
     <!-- Styles -->
 
@@ -38,14 +38,14 @@
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="th:Chrome.IsHover" Value="True">
-                            <Setter TargetName="BorderOverlay" Property="Stroke" Value="{StaticResource ListBoxChromeHoverBorderOverlay}"/>
+                            <Setter TargetName="BorderOverlay" Property="Stroke" Value="{StaticResource ListBoxChrome.BorderOverlay.Hover}"/>
                         </Trigger>
                         <Trigger Property="th:Chrome.IsFocused" Value="True">
-                            <Setter TargetName="BorderOverlay" Property="Stroke" Value="{StaticResource ListBoxChromeFocusedBorderOverlay}"/>
+                            <Setter TargetName="BorderOverlay" Property="Stroke" Value="{StaticResource ListBoxChrome.BorderOverlay.Focused}"/>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
-                            <Setter TargetName="BackgroundOverlay" Property="Fill" Value="{StaticResource ListBoxChromeDisabledBackgroundOverlay}"/>
-                            <Setter TargetName="BorderOverlay" Property="Stroke" Value="{StaticResource ListBoxChromeDisabledBorderOverlay}"/>
+                            <Setter TargetName="BackgroundOverlay" Property="Fill" Value="{StaticResource ListBoxChrome.BackgroundOverlay.Disabled}"/>
+                            <Setter TargetName="BorderOverlay" Property="Stroke" Value="{StaticResource ListBoxChrome.BorderOverlay.Disabled}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

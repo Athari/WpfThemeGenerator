@@ -9,67 +9,67 @@
 
     <!-- Colors -->
 
-    <SolidColorBrush x:Key="CheckBoxStroke" Color="#8E8F8F"/>
-    <SolidColorBrush x:Key="CheckBoxFill" Color="#F4F4F4"/>
+    <SolidColorBrush x:Key="CheckBox.Stroke" Color="#8E8F8F"/>
+    <SolidColorBrush x:Key="CheckBox.Fill" Color="#F4F4F4"/>
     <!-- Check mark -->
-    <SolidColorBrush x:Key="CheckBoxCheckMarkStroke" Color="#FFFFFF"/>
-    <SolidColorBrush x:Key="CheckBoxCheckMarkPressedStroke" Color="#B2FFFFFF"/>
-    <SolidColorBrush x:Key="CheckBoxCheckMarkFill" Color="#31347C"/>
-    <SolidColorBrush x:Key="CheckBoxCheckMarkPressedFill" Color="#B231347C"/>
-    <SolidColorBrush x:Key="CheckBoxCheckMarkDisabledFill" Color="#AEB7CF"/>
+    <SolidColorBrush x:Key="CheckBox.Glyph.Stroke.Normal" Color="#FFFFFF"/>
+    <SolidColorBrush x:Key="CheckBox.Glyph.Stroke.Pressed" Color="#B2FFFFFF"/>
+    <SolidColorBrush x:Key="CheckBox.Glyph.Fill.Normal" Color="#31347C"/>
+    <SolidColorBrush x:Key="CheckBox.Glyph.Fill.Pressed" Color="#B231347C"/>
+    <SolidColorBrush x:Key="CheckBox.Glyph.Fill.Disabled" Color="#AEB7CF"/>
     <!-- Inner border -->
-    <LinearGradientBrush x:Key="CheckBoxInnerBorder" StartPoint="0,0" EndPoint="1,1">
+    <LinearGradientBrush x:Key="CheckBox.InnerBorder" StartPoint="0,0" EndPoint="1,1">
         <GradientStop Color="#AEB3B9" Offset="0.25"/>
         <GradientStop Color="#C2C4C6" Offset="0.5"/>
         <GradientStop Color="#EAEBEB" Offset="1"/>
     </LinearGradientBrush>
-    <LinearGradientBrush x:Key="CheckBoxHoverInnerBorder" StartPoint="0,0" EndPoint="1,1">
+    <LinearGradientBrush x:Key="CheckBox.InnerBorder.Hover" StartPoint="0,0" EndPoint="1,1">
         <GradientStop Color="#79C6F9" Offset="0.3"/>
         <GradientStop Color="#79C6F9" Offset="0.5"/>
         <GradientStop Color="#D2EDFD" Offset="1"/>
     </LinearGradientBrush>
-    <LinearGradientBrush x:Key="CheckBoxPressedInnerBorder" StartPoint="0,0" EndPoint="1,1">
+    <LinearGradientBrush x:Key="CheckBox.InnerBorder.Pressed" StartPoint="0,0" EndPoint="1,1">
         <GradientStop Color="#54A6D5" Offset="0.3"/>
         <GradientStop Color="#5EB5E4" Offset="0.5"/>
         <GradientStop Color="#C4E5F6" Offset="1"/>
     </LinearGradientBrush>
     <!-- Indeterminate inner border -->
-    <LinearGradientBrush x:Key="CheckBoxIndeterminateInnerBorder" StartPoint="0,0" EndPoint="1,1">
+    <LinearGradientBrush x:Key="CheckBox.InnerBorder.Indeterminate" StartPoint="0,0" EndPoint="1,1">
         <GradientStop Color="#2A628D" Offset="0"/>
         <GradientStop Color="#245479" Offset="0.5"/>
         <GradientStop Color="#193B55" Offset="1"/>
     </LinearGradientBrush>
-    <LinearGradientBrush x:Key="CheckBoxIndeterminateHoverInnerBorder" StartPoint="0,0" EndPoint="1,1">
+    <LinearGradientBrush x:Key="CheckBox.InnerBorder.IndeterminateHover" StartPoint="0,0" EndPoint="1,1">
         <GradientStop Color="#29628D" Offset="0"/>
         <GradientStop Color="#245479" Offset="0.5"/>
         <GradientStop Color="#193B55" Offset="1"/>
     </LinearGradientBrush>
-    <LinearGradientBrush x:Key="CheckBoxIndeterminatePressedInnerBorder" StartPoint="0,0" EndPoint="1,1">
+    <LinearGradientBrush x:Key="CheckBox.InnerBorder.IndeterminatePressed" StartPoint="0,0" EndPoint="1,1">
         <GradientStop Color="#193B55" Offset="0"/>
         <GradientStop Color="#245479" Offset="0.5"/>
         <GradientStop Color="#29628D" Offset="1"/>
     </LinearGradientBrush>
     <!-- Indeterminate highlight -->
-    <LinearGradientBrush x:Key="CheckBoxIndeterminateHighlight" StartPoint="0,0" EndPoint="1,1">
+    <LinearGradientBrush x:Key="CheckBox.Highlight.Indeterminate" StartPoint="0,0" EndPoint="1,1">
         <GradientStop Color="#80FFFFFF" Offset="0"/>
         <GradientStop Color="#00FFFFFF" Offset="0.5"/>
         <GradientStop Color="#003333A0" Offset="0.5"/>
         <GradientStop Color="#003333A0" Offset="1"/>
     </LinearGradientBrush>
-    <LinearGradientBrush x:Key="CheckBoxIndeterminateHoverHighlight" StartPoint="0,0" EndPoint="1,1">
+    <LinearGradientBrush x:Key="CheckBox.Highlight.IndeterminateHover" StartPoint="0,0" EndPoint="1,1">
         <GradientStop Color="#80FFFFFF" Offset="0"/>
         <GradientStop Color="#00FFFFFF" Offset="0.5"/>
         <GradientStop Color="#003333A0" Offset="0.5"/>
         <GradientStop Color="#803333A0" Offset="1"/>
     </LinearGradientBrush>
-    <LinearGradientBrush x:Key="CheckBoxIndeterminatePressedHighlight" StartPoint="0,0" EndPoint="1,1">
+    <LinearGradientBrush x:Key="CheckBox.Highlight.IndeterminatePressed" StartPoint="0,0" EndPoint="1,1">
         <GradientStop Color="#00FFFFFF" Offset="0.5"/>
         <GradientStop Color="#20FFFFFF" Offset="1"/>
     </LinearGradientBrush>
 
     <!-- Images -->
 
-    <PathGeometry x:Key="CheckBoxCheckMarkGeometry">
+    <PathGeometry x:Key="CheckBox.Glyph.Geometry">
         <PathFigure StartPoint="9.0, 1.833" IsClosed="True">
             <LineSegment Point="10.667, 3.167"/>
             <LineSegment Point="7, 10.667"/>
@@ -84,10 +84,10 @@
     <!-- Styles -->
 
     <Style x:Key="{x:Type CheckBox}" TargetType="{x:Type CheckBox}">
-        <Setter Property="FocusVisualStyle" Value="{StaticResource EmptyBulletFocusVisual}"/>
+        <Setter Property="FocusVisualStyle" Value="{StaticResource Bullet.FocusVisual.Empty}"/>
         <Setter Property="Foreground" Value="{xx:SystemBrush ControlText}"/>
-        <Setter Property="Background" Value="{StaticResource CheckBoxFill}"/>
-        <Setter Property="BorderBrush" Value="{StaticResource CheckBoxStroke}"/>
+        <Setter Property="Background" Value="{StaticResource CheckBox.Fill}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource CheckBox.Stroke}"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="Template">
             <Setter.Value>
@@ -97,11 +97,11 @@
                             <Grid Width="13" Height="13">
                                 <Rectangle x:Name="Background" Margin="0" Fill="{TemplateBinding Background}"/>
                                 <Rectangle x:Name="BackgroundOverlay" Margin="0"/>
-                                <Rectangle x:Name="InnerFill" Margin="3" Fill="{StaticResource BulletInnerFill}"/>
-                                <Rectangle x:Name="InnerBorder" Margin="2" Stroke="{StaticResource CheckBoxInnerBorder}"/>
+                                <Rectangle x:Name="InnerFill" Margin="3" Fill="{StaticResource Bullet.InnerFill.Normal}"/>
+                                <Rectangle x:Name="InnerBorder" Margin="2" Stroke="{StaticResource CheckBox.InnerBorder}"/>
                                 <Rectangle x:Name="Highlight" Margin="3"/>
-                                <Path x:Name="GlyphStroke" Margin="0" StrokeThickness="1.5" Data="{StaticResource CheckBoxCheckMarkGeometry}"/>
-                                <Path x:Name="GlyphFill" Margin="0" Data="{StaticResource CheckBoxCheckMarkGeometry}"/>
+                                <Path x:Name="GlyphStroke" Margin="0" StrokeThickness="1.5" Data="{StaticResource CheckBox.Glyph.Geometry}"/>
+                                <Path x:Name="GlyphFill" Margin="0" Data="{StaticResource CheckBox.Glyph.Geometry}"/>
                                 <Rectangle x:Name="Border" Margin="0" Stroke="{TemplateBinding BorderBrush}"/>
                                 <Rectangle x:Name="BorderOverlay" Margin="0"/>
                             </Grid>
@@ -114,29 +114,29 @@
 
                         <Trigger Property="HasContent" Value="True">
                             <!-- if (HasContent) -->
-                            <Setter Property="FocusVisualStyle" Value="{StaticResource BulletFocusVisual}"/>
+                            <Setter Property="FocusVisualStyle" Value="{StaticResource Bullet.FocusVisual.Normal}"/>
                             <Setter Property="Padding" Value="4,0,0,0"/>
                         </Trigger>
 
                         <Trigger Property="IsMouseOver" Value="True">
                             <!-- if (IsMouseOver) -->
-                            <Setter TargetName="BackgroundOverlay" Property="Fill" Value="{StaticResource BulletHoverBackgroundOverlay}"/>
-                            <Setter TargetName="InnerFill" Property="Fill" Value="{StaticResource BulletHoverInnerFill}"/>
-                            <Setter TargetName="BorderOverlay" Property="Stroke" Value="{StaticResource BulletHoverBorderOverlay}"/>
-                            <Setter TargetName="InnerBorder" Property="Stroke" Value="{StaticResource CheckBoxHoverInnerBorder}"/>
+                            <Setter TargetName="BackgroundOverlay" Property="Fill" Value="{StaticResource Bullet.BackgroundOverlay.Hover}"/>
+                            <Setter TargetName="InnerFill" Property="Fill" Value="{StaticResource Bullet.InnerFill.Hover}"/>
+                            <Setter TargetName="BorderOverlay" Property="Stroke" Value="{StaticResource Bullet.BorderOverlay.Hover}"/>
+                            <Setter TargetName="InnerBorder" Property="Stroke" Value="{StaticResource CheckBox.InnerBorder.Hover}"/>
                         </Trigger>
                         <Trigger Property="IsChecked" Value="{x:Null}">
                             <!-- if (IsChecked == null) -->
-                            <Setter TargetName="Highlight" Property="Stroke" Value="{StaticResource CheckBoxIndeterminateHighlight}"/>
-                            <Setter TargetName="InnerFill" Property="Fill" Value="{StaticResource BulletIndeterminateFill}"/>
-                            <Setter TargetName="InnerBorder" Property="Stroke" Value="{StaticResource CheckBoxIndeterminateInnerBorder}"/>
+                            <Setter TargetName="Highlight" Property="Stroke" Value="{StaticResource CheckBox.Highlight.Indeterminate}"/>
+                            <Setter TargetName="InnerFill" Property="Fill" Value="{StaticResource Bullet.Fill.Indeterminate}"/>
+                            <Setter TargetName="InnerBorder" Property="Stroke" Value="{StaticResource CheckBox.InnerBorder.Indeterminate}"/>
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
                             <!-- if (IsPressed) -->
-                            <Setter TargetName="BackgroundOverlay" Property="Fill" Value="{StaticResource BulletPressedBackgroundOverlay}"/>
-                            <Setter TargetName="InnerFill" Property="Fill" Value="{StaticResource BulletPressedInnerFill}"/>
-                            <Setter TargetName="BorderOverlay" Property="Stroke" Value="{StaticResource BulletPressedBorderOverlay}"/>
-                            <Setter TargetName="InnerBorder" Property="Stroke" Value="{StaticResource CheckBoxPressedInnerBorder}"/>
+                            <Setter TargetName="BackgroundOverlay" Property="Fill" Value="{StaticResource Bullet.BackgroundOverlay.Pressed}"/>
+                            <Setter TargetName="InnerFill" Property="Fill" Value="{StaticResource Bullet.InnerFill.Pressed}"/>
+                            <Setter TargetName="BorderOverlay" Property="Stroke" Value="{StaticResource Bullet.BorderOverlay.Pressed}"/>
+                            <Setter TargetName="InnerBorder" Property="Stroke" Value="{StaticResource CheckBox.InnerBorder.Pressed}"/>
                         </Trigger>
                         <MultiTrigger>
                             <!-- if (IsChecked == null && IsMouseOver) -->
@@ -144,9 +144,9 @@
                                 <Condition Property="IsChecked" Value="{x:Null}"/>
                                 <Condition Property="IsMouseOver" Value="True"/>
                             </MultiTrigger.Conditions>
-                            <Setter TargetName="Highlight" Property="Stroke" Value="{StaticResource CheckBoxIndeterminateHoverHighlight}"/>
-                            <Setter TargetName="InnerFill" Property="Fill" Value="{StaticResource BulletIndeterminateHoverFill}"/>
-                            <Setter TargetName="InnerBorder" Property="Stroke" Value="{StaticResource CheckBoxIndeterminateHoverInnerBorder}"/>
+                            <Setter TargetName="Highlight" Property="Stroke" Value="{StaticResource CheckBox.Highlight.IndeterminateHover}"/>
+                            <Setter TargetName="InnerFill" Property="Fill" Value="{StaticResource Bullet.Fill.IndeterminateHover}"/>
+                            <Setter TargetName="InnerBorder" Property="Stroke" Value="{StaticResource CheckBox.InnerBorder.IndeterminateHover}"/>
                         </MultiTrigger>
 
                         <MultiTrigger>
@@ -155,9 +155,9 @@
                                 <Condition Property="IsChecked" Value="{x:Null}"/>
                                 <Condition Property="IsPressed" Value="True"/>
                             </MultiTrigger.Conditions>
-                            <Setter TargetName="Highlight" Property="Stroke" Value="{StaticResource CheckBoxIndeterminatePressedHighlight}"/>
-                            <Setter TargetName="InnerFill" Property="Fill" Value="{StaticResource BulletIndeterminatePressedFill}"/>
-                            <Setter TargetName="InnerBorder" Property="Stroke" Value="{StaticResource CheckBoxIndeterminatePressedInnerBorder}"/>
+                            <Setter TargetName="Highlight" Property="Stroke" Value="{StaticResource CheckBox.Highlight.IndeterminatePressed}"/>
+                            <Setter TargetName="InnerFill" Property="Fill" Value="{StaticResource Bullet.Fill.IndeterminatePressed}"/>
+                            <Setter TargetName="InnerBorder" Property="Stroke" Value="{StaticResource CheckBox.InnerBorder.IndeterminatePressed}"/>
                         </MultiTrigger>
                         <MultiTrigger>
                             <!-- if (IsChecked == true && IsPressed) -->
@@ -165,8 +165,8 @@
                                 <Condition Property="IsChecked" Value="True"/>
                                 <Condition Property="IsPressed" Value="True"/>
                             </MultiTrigger.Conditions>
-                            <Setter TargetName="GlyphStroke" Property="Stroke" Value="{StaticResource CheckBoxCheckMarkPressedStroke}"/>
-                            <Setter TargetName="GlyphFill" Property="Fill" Value="{StaticResource CheckBoxCheckMarkPressedFill}"/>
+                            <Setter TargetName="GlyphStroke" Property="Stroke" Value="{StaticResource CheckBox.Glyph.Stroke.Pressed}"/>
+                            <Setter TargetName="GlyphFill" Property="Fill" Value="{StaticResource CheckBox.Glyph.Fill.Pressed}"/>
                         </MultiTrigger>
                         <MultiTrigger>
                             <!-- if (IsChecked == true && !IsPressed) -->
@@ -174,8 +174,8 @@
                                 <Condition Property="IsChecked" Value="True"/>
                                 <Condition Property="IsPressed" Value="False"/>
                             </MultiTrigger.Conditions>
-                            <Setter TargetName="GlyphStroke" Property="Stroke" Value="{StaticResource CheckBoxCheckMarkStroke}"/>
-                            <Setter TargetName="GlyphFill" Property="Fill" Value="{StaticResource CheckBoxCheckMarkFill}"/>
+                            <Setter TargetName="GlyphStroke" Property="Stroke" Value="{StaticResource CheckBox.Glyph.Stroke.Normal}"/>
+                            <Setter TargetName="GlyphFill" Property="Fill" Value="{StaticResource CheckBox.Glyph.Fill.Normal}"/>
                         </MultiTrigger>
 
                         <Trigger Property="IsEnabled" Value="False">
@@ -183,8 +183,8 @@
                             <Setter Property="Foreground" Value="{xx:SystemBrush GrayText}"/>
                             <Setter TargetName="InnerFill" Property="Fill" Value="{x:Null}"/>
                             <Setter TargetName="GlyphStroke" Property="Stroke" Value="{x:Null}"/>
-                            <Setter TargetName="BorderOverlay" Property="Stroke" Value="{StaticResource BulletDisabledBorderOverlay}"/>
-                            <Setter TargetName="InnerBorder" Property="Stroke" Value="{StaticResource BulletDisabledInnerBorder}"/>
+                            <Setter TargetName="BorderOverlay" Property="Stroke" Value="{StaticResource Bullet.BorderOverlay.Disabled}"/>
+                            <Setter TargetName="InnerBorder" Property="Stroke" Value="{StaticResource Bullet.InnerBorder.Disabled}"/>
                         </Trigger>
                         <MultiTrigger>
                             <!-- if (IsChecked == null && !IsEnabled) -->
@@ -192,8 +192,8 @@
                                 <Condition Property="IsChecked" Value="{x:Null}"/>
                                 <Condition Property="IsEnabled" Value="False"/>
                             </MultiTrigger.Conditions>
-                            <Setter TargetName="InnerFill" Property="Fill" Value="{StaticResource BulletIndeterminateDisabledFill}"/>
-                            <Setter TargetName="InnerBorder" Property="Stroke" Value="{StaticResource BulletIndeterminateDisabledInnerBorder}"/>
+                            <Setter TargetName="InnerFill" Property="Fill" Value="{StaticResource Bullet.Fill.IndeterminateDisabled}"/>
+                            <Setter TargetName="InnerBorder" Property="Stroke" Value="{StaticResource Bullet.InnerBorder.IndeterminateDisabled}"/>
                         </MultiTrigger>
                         <MultiTrigger>
                             <!-- if (IsChecked == true && !IsEnabled) -->
@@ -201,7 +201,7 @@
                                 <Condition Property="IsChecked" Value="True"/>
                                 <Condition Property="IsEnabled" Value="False"/>
                             </MultiTrigger.Conditions>
-                            <Setter TargetName="GlyphFill" Property="Fill" Value="{StaticResource CheckBoxCheckMarkDisabledFill}"/>
+                            <Setter TargetName="GlyphFill" Property="Fill" Value="{StaticResource CheckBox.Glyph.Fill.Disabled}"/>
                         </MultiTrigger>
 
                     </ControlTemplate.Triggers>

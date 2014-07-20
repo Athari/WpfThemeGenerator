@@ -10,7 +10,7 @@
 
     <!-- Colors -->
 
-    <LinearGradientBrush x:Key="TextBoxBorder" StartPoint="0,0" EndPoint="0,20" MappingMode="Absolute">
+    <LinearGradientBrush x:Key="TextBox.Border.Normal" StartPoint="0,0" EndPoint="0,20" MappingMode="Absolute">
         <GradientStop Color="#ABADB3" Offset="0.05"/>
         <GradientStop Color="#E2E3EA" Offset="0.07"/>
         <GradientStop Color="#E3E9EF" Offset="1"/>
@@ -21,7 +21,7 @@
     <Style x:Key="{x:Type TextBoxBase}" TargetType="{x:Type TextBoxBase}" BasedOn="{x:Null}">
         <Setter Property="Foreground" Value="{xx:SystemBrush ControlText}"/>
         <Setter Property="Background" Value="{xx:SystemBrush Window}"/>
-        <Setter Property="BorderBrush" Value="{StaticResource TextBoxBorder}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource TextBox.Border.Normal}"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="Padding" Value="1"/>
         <Setter Property="AllowDrop" Value="True"/>

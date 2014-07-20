@@ -9,41 +9,41 @@
 
     <!-- Colors -->
 
-    <SolidColorBrush x:Key="RadioButtonStroke" Color="#8E8F8F"/>
-    <SolidColorBrush x:Key="RadioButtonFill" Color="#F4F4F4"/>
-    <!-- Check mark -->
-    <SolidColorBrush x:Key="RadioButtonGlyphStroke" Color="#193B55"/>
-    <SolidColorBrush x:Key="RadioButtonDisabledGlyphStroke" Color="#A2AEB9"/>
-    <RadialGradientBrush x:Key="RadioButtonGlyphFill" Center="0.25,0.25" GradientOrigin="0.25,0.25" RadiusX="0.75" RadiusY="0.75">
+    <SolidColorBrush x:Key="RadioButton.Stroke" Color="#8E8F8F"/>
+    <SolidColorBrush x:Key="RadioButton.Fill" Color="#F4F4F4"/>
+    <!-- Check mark glyph -->
+    <SolidColorBrush x:Key="RadioButton.Glyph.Stroke.Normal" Color="#193B55"/>
+    <SolidColorBrush x:Key="RadioButton.Glyph.Stroke.Disabled" Color="#A2AEB9"/>
+    <RadialGradientBrush x:Key="RadioButton.Glyph.Fill.Normal" Center="0.25,0.25" GradientOrigin="0.25,0.25" RadiusX="0.75" RadiusY="0.75">
         <GradientStop Color="#E5E5E5" Offset="0.1"/>
         <GradientStop Color="#5DCEDD" Offset="0.35"/>
         <GradientStop Color="#0B82C7" Offset="1"/>
     </RadialGradientBrush>
-    <RadialGradientBrush x:Key="RadioButtonGlyphHoverFill" Center="0.25,0.25" GradientOrigin="0.25,0.25" RadiusX="0.75" RadiusY="0.75">
+    <RadialGradientBrush x:Key="RadioButton.Glyph.Fill.Hover" Center="0.25,0.25" GradientOrigin="0.25,0.25" RadiusX="0.75" RadiusY="0.75">
         <GradientStop Color="#FFFFFF" Offset="0.1"/>
         <GradientStop Color="#74FFFF" Offset="0.35"/>
         <GradientStop Color="#0DA0F3" Offset="1"/>
     </RadialGradientBrush>
-    <RadialGradientBrush x:Key="RadioButtonGlyphPressedFill" Center="0.25,0.25" GradientOrigin="0.25,0.25" RadiusX="0.75" RadiusY="0.75">
+    <RadialGradientBrush x:Key="RadioButton.Glyph.Fill.Pressed" Center="0.25,0.25" GradientOrigin="0.25,0.25" RadiusX="0.75" RadiusY="0.75">
         <GradientStop Color="#95D9FC" Offset="0"/>
         <GradientStop Color="#3A84AA" Offset="0.35"/>
         <GradientStop Color="#075483" Offset="1"/>
     </RadialGradientBrush>
-    <RadialGradientBrush x:Key="RadioButtonGlyphDisabledFill" Center="0.25,0.25" GradientOrigin="0.25,0.25" RadiusX="0.75" RadiusY="0.75" Opacity="0.7">
+    <RadialGradientBrush x:Key="RadioButton.Glyph.Fill.Disabled" Center="0.25,0.25" GradientOrigin="0.25,0.25" RadiusX="0.75" RadiusY="0.75" Opacity="0.7">
         <GradientStop Color="#C9D5DE" Offset="0"/>
         <GradientStop Color="#C0E3E8" Offset="0.35"/>
         <GradientStop Color="#B0D4E9" Offset="1"/>
     </RadialGradientBrush>
     <!-- Inner border -->
-    <LinearGradientBrush x:Key="RadioButtonInnerBorder" StartPoint="0,0" EndPoint="1,1">
+    <LinearGradientBrush x:Key="RadioButton.InnerBorder.Normal" StartPoint="0,0" EndPoint="1,1">
         <GradientStop Color="#B3B8BD" Offset="0"/>
         <GradientStop Color="#EBEBEB" Offset="1"/>
     </LinearGradientBrush>
-    <LinearGradientBrush x:Key="RadioButtonHoverInnerBorder" StartPoint="0,0" EndPoint="1,1">
+    <LinearGradientBrush x:Key="RadioButton.InnerBorder.Hover" StartPoint="0,0" EndPoint="1,1">
         <GradientStop Color="#80CAF9" Offset="0"/>
         <GradientStop Color="#D2EEFD" Offset="1"/>
     </LinearGradientBrush>
-    <LinearGradientBrush x:Key="RadioButtonPressedInnerBorder" StartPoint="0,0" EndPoint="1,1">
+    <LinearGradientBrush x:Key="RadioButton.InnerBorder.Pressed" StartPoint="0,0" EndPoint="1,1">
         <GradientStop Color="#5CAAD7" Offset="0"/>
         <GradientStop Color="#C3E4F6" Offset="1"/>
     </LinearGradientBrush>
@@ -51,10 +51,10 @@
     <!-- Styles -->
 
     <Style x:Key="{x:Type RadioButton}" TargetType="{x:Type RadioButton}">
-        <Setter Property="FocusVisualStyle" Value="{StaticResource EmptyBulletFocusVisual}"/>
+        <Setter Property="FocusVisualStyle" Value="{StaticResource Bullet.FocusVisual.Empty}"/>
         <Setter Property="Foreground" Value="{xx:SystemBrush ControlText}"/>
-        <Setter Property="Background" Value="{StaticResource RadioButtonFill}"/>
-        <Setter Property="BorderBrush" Value="{StaticResource RadioButtonStroke}"/>
+        <Setter Property="Background" Value="{StaticResource RadioButton.Fill}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource RadioButton.Stroke}"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="Template">
             <Setter.Value>
@@ -64,8 +64,8 @@
                             <Grid Width="12" Height="12">
                                 <Ellipse x:Name="Background" Margin="0" Fill="{TemplateBinding Background}"/>
                                 <Ellipse x:Name="BackgroundOverlay" Margin="0"/>
-                                <Ellipse x:Name="InnerFill" Margin="3" Fill="{StaticResource BulletInnerFill}"/>
-                                <Ellipse x:Name="InnerBorder" Margin="2" Stroke="{StaticResource RadioButtonInnerBorder}"/>
+                                <Ellipse x:Name="InnerFill" Margin="3" Fill="{StaticResource Bullet.InnerFill.Normal}"/>
+                                <Ellipse x:Name="InnerBorder" Margin="2" Stroke="{StaticResource RadioButton.InnerBorder.Normal}"/>
                                 <Ellipse x:Name="Glyph" Margin="2.5"/>
                                 <Ellipse x:Name="Border" Margin="0" Stroke="{TemplateBinding BorderBrush}"/>
                                 <Ellipse x:Name="BorderOverlay" Margin="0"/>
@@ -79,34 +79,34 @@
 
                         <Trigger Property="HasContent" Value="True">
                             <!-- if (HasContent) -->
-                            <Setter Property="FocusVisualStyle" Value="{StaticResource BulletFocusVisual}"/>
+                            <Setter Property="FocusVisualStyle" Value="{StaticResource Bullet.FocusVisual.Normal}"/>
                             <Setter Property="Padding" Value="4,0,0,0"/>
                         </Trigger>
 
                         <Trigger Property="IsMouseOver" Value="True">
                             <!-- if (IsMouseOver) -->
-                            <Setter TargetName="BackgroundOverlay" Property="Fill" Value="{StaticResource BulletHoverBackgroundOverlay}"/>
-                            <Setter TargetName="InnerFill" Property="Fill" Value="{StaticResource BulletHoverInnerFill}"/>
-                            <Setter TargetName="BorderOverlay" Property="Stroke" Value="{StaticResource BulletHoverBorderOverlay}"/>
-                            <Setter TargetName="InnerBorder" Property="Stroke" Value="{StaticResource RadioButtonHoverInnerBorder}"/>
+                            <Setter TargetName="BackgroundOverlay" Property="Fill" Value="{StaticResource Bullet.BackgroundOverlay.Hover}"/>
+                            <Setter TargetName="InnerFill" Property="Fill" Value="{StaticResource Bullet.InnerFill.Hover}"/>
+                            <Setter TargetName="BorderOverlay" Property="Stroke" Value="{StaticResource Bullet.BorderOverlay.Hover}"/>
+                            <Setter TargetName="InnerBorder" Property="Stroke" Value="{StaticResource RadioButton.InnerBorder.Hover}"/>
                         </Trigger>
                         <Trigger Property="IsChecked" Value="{x:Null}">
                             <!-- if (IsChecked == null) -->
-                            <Setter TargetName="InnerFill" Property="Fill" Value="{StaticResource BulletIndeterminateFill}"/>
+                            <Setter TargetName="InnerFill" Property="Fill" Value="{StaticResource Bullet.Fill.Indeterminate}"/>
                         </Trigger>
                         <Trigger Property="IsChecked" Value="True">
                             <!-- if (IsChecked == true) -->
-                            <Setter TargetName="Glyph" Property="Stroke" Value="{StaticResource RadioButtonGlyphStroke}"/>
-                            <Setter TargetName="Glyph" Property="Fill" Value="{StaticResource RadioButtonGlyphFill}"/>
+                            <Setter TargetName="Glyph" Property="Stroke" Value="{StaticResource RadioButton.Glyph.Stroke.Normal}"/>
+                            <Setter TargetName="Glyph" Property="Fill" Value="{StaticResource RadioButton.Glyph.Fill.Normal}"/>
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
                             <!-- if (IsPressed) -->
-                            <Setter TargetName="BackgroundOverlay" Property="Fill" Value="{StaticResource BulletPressedBackgroundOverlay}"/>
-                            <Setter TargetName="InnerFill" Property="Fill" Value="{StaticResource BulletPressedInnerFill}"/>
-                            <Setter TargetName="Glyph" Property="Stroke" Value="{StaticResource RadioButtonGlyphStroke}"/>
-                            <Setter TargetName="Glyph" Property="Fill" Value="{StaticResource RadioButtonGlyphPressedFill}"/>
-                            <Setter TargetName="BorderOverlay" Property="Stroke" Value="{StaticResource BulletPressedBorderOverlay}"/>
-                            <Setter TargetName="InnerBorder" Property="Stroke" Value="{StaticResource RadioButtonPressedInnerBorder}"/>
+                            <Setter TargetName="BackgroundOverlay" Property="Fill" Value="{StaticResource Bullet.BackgroundOverlay.Pressed}"/>
+                            <Setter TargetName="InnerFill" Property="Fill" Value="{StaticResource Bullet.InnerFill.Pressed}"/>
+                            <Setter TargetName="Glyph" Property="Stroke" Value="{StaticResource RadioButton.Glyph.Stroke.Normal}"/>
+                            <Setter TargetName="Glyph" Property="Fill" Value="{StaticResource RadioButton.Glyph.Fill.Pressed}"/>
+                            <Setter TargetName="BorderOverlay" Property="Stroke" Value="{StaticResource Bullet.BorderOverlay.Pressed}"/>
+                            <Setter TargetName="InnerBorder" Property="Stroke" Value="{StaticResource RadioButton.InnerBorder.Pressed}"/>
                         </Trigger>
 
                         <MultiTrigger>
@@ -115,7 +115,7 @@
                                 <Condition Property="IsChecked" Value="{x:Null}"/>
                                 <Condition Property="IsMouseOver" Value="True"/>
                             </MultiTrigger.Conditions>
-                            <Setter TargetName="InnerFill" Property="Fill" Value="{StaticResource BulletIndeterminateHoverFill}"/>
+                            <Setter TargetName="InnerFill" Property="Fill" Value="{StaticResource Bullet.Fill.IndeterminateHover}"/>
                         </MultiTrigger>
                         <MultiTrigger>
                             <!-- if (IsChecked == true && IsMouseOver) -->
@@ -123,7 +123,7 @@
                                 <Condition Property="IsChecked" Value="True"/>
                                 <Condition Property="IsMouseOver" Value="True"/>
                             </MultiTrigger.Conditions>
-                            <Setter TargetName="Glyph" Property="Fill" Value="{StaticResource RadioButtonGlyphHoverFill}"/>
+                            <Setter TargetName="Glyph" Property="Fill" Value="{StaticResource RadioButton.Glyph.Fill.Hover}"/>
                         </MultiTrigger>
 
                         <MultiTrigger>
@@ -132,7 +132,7 @@
                                 <Condition Property="IsChecked" Value="{x:Null}"/>
                                 <Condition Property="IsPressed" Value="True"/>
                             </MultiTrigger.Conditions>
-                            <Setter TargetName="InnerFill" Property="Fill" Value="{StaticResource BulletIndeterminatePressedFill}"/>
+                            <Setter TargetName="InnerFill" Property="Fill" Value="{StaticResource Bullet.Fill.IndeterminatePressed}"/>
                         </MultiTrigger>
                         <MultiTrigger>
                             <!-- if (IsChecked == false && IsPressed) -->
@@ -147,7 +147,7 @@
                                 <Condition Property="IsChecked" Value="True"/>
                                 <Condition Property="IsPressed" Value="True"/>
                             </MultiTrigger.Conditions>
-                            <Setter TargetName="Glyph" Property="Fill" Value="{StaticResource RadioButtonGlyphPressedFill}"/>
+                            <Setter TargetName="Glyph" Property="Fill" Value="{StaticResource RadioButton.Glyph.Fill.Pressed}"/>
                         </MultiTrigger>
                         <MultiTrigger>
                             <!-- if (IsChecked == true && !IsPressed) -->
@@ -162,8 +162,8 @@
                             <Setter Property="Foreground" Value="{xx:SystemBrush GrayText}"/>
                             <Setter TargetName="InnerFill" Property="Fill" Value="{x:Null}"/>
                             <Setter TargetName="Glyph" Property="Stroke" Value="{x:Null}"/>
-                            <Setter TargetName="BorderOverlay" Property="Stroke" Value="{StaticResource BulletDisabledBorderOverlay}"/>
-                            <Setter TargetName="InnerBorder" Property="Stroke" Value="{StaticResource BulletDisabledInnerBorder}"/>
+                            <Setter TargetName="BorderOverlay" Property="Stroke" Value="{StaticResource Bullet.BorderOverlay.Disabled}"/>
+                            <Setter TargetName="InnerBorder" Property="Stroke" Value="{StaticResource Bullet.InnerBorder.Disabled}"/>
                         </Trigger>
                         <MultiTrigger>
                             <!-- if (IsChecked == null && !IsEnabled) -->
@@ -171,8 +171,8 @@
                                 <Condition Property="IsChecked" Value="{x:Null}"/>
                                 <Condition Property="IsEnabled" Value="False"/>
                             </MultiTrigger.Conditions>
-                            <Setter TargetName="InnerFill" Property="Fill" Value="{StaticResource BulletIndeterminateDisabledFill}"/>
-                            <Setter TargetName="InnerBorder" Property="Stroke" Value="{StaticResource BulletIndeterminateDisabledInnerBorder}"/>
+                            <Setter TargetName="InnerFill" Property="Fill" Value="{StaticResource Bullet.Fill.IndeterminateDisabled}"/>
+                            <Setter TargetName="InnerBorder" Property="Stroke" Value="{StaticResource Bullet.InnerBorder.IndeterminateDisabled}"/>
                         </MultiTrigger>
                         <MultiTrigger>
                             <!-- if (IsChecked == true && !IsEnabled) -->
@@ -180,8 +180,8 @@
                                 <Condition Property="IsChecked" Value="True"/>
                                 <Condition Property="IsEnabled" Value="False"/>
                             </MultiTrigger.Conditions>
-                            <Setter TargetName="Glyph" Property="Stroke" Value="{StaticResource RadioButtonDisabledGlyphStroke}"/>
-                            <Setter TargetName="Glyph" Property="Fill" Value="{StaticResource RadioButtonGlyphDisabledFill}"/>
+                            <Setter TargetName="Glyph" Property="Stroke" Value="{StaticResource RadioButton.Glyph.Stroke.Disabled}"/>
+                            <Setter TargetName="Glyph" Property="Fill" Value="{StaticResource RadioButton.Glyph.Fill.Disabled}"/>
                         </MultiTrigger>
 
                     </ControlTemplate.Triggers>
