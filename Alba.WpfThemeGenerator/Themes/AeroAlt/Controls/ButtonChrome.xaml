@@ -1,7 +1,7 @@
 ﻿<ResourceDictionary
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:th="clr-namespace:Alba.WpfThemeGenerator.Themes">
+        xmlns:at="clr-namespace:Alba.WpfThemeGenerator.Themes.AeroAlt.Attached">
 
     <!-- Colors -->
 
@@ -73,16 +73,16 @@
                         </Border>
                     </Grid>
                     <ControlTemplate.Triggers>
-                        <Trigger Property="th:Chrome.IsDefaulted" Value="True">
+                        <Trigger Property="at:Chrome.IsDefaulted" Value="True">
                             <!-- if (IsDefaulted) -->
                             <Setter TargetName="InnerBorder" Property="Stroke" Value="{StaticResource Button.InnerBorder.Defaulted}"/>
                         </Trigger>
-                        <Trigger Property="th:Chrome.IsHover" Value="True">
+                        <Trigger Property="at:Chrome.IsHover" Value="True">
                             <!-- if (IsHover) -->
                             <Setter TargetName="BackgroundOverlay" Property="Fill" Value="{StaticResource Button.BackgroundOverlay.Hover}"/>
                             <Setter TargetName="BorderOverlay" Property="Stroke" Value="{StaticResource Button.BorderOverlay.Hover}"/>
                         </Trigger>
-                        <Trigger Property="th:Chrome.IsPressed" Value="True">
+                        <Trigger Property="at:Chrome.IsPressed" Value="True">
                             <!-- if (IsPressed) -->
                             <Setter TargetName="BackgroundOverlay" Property="Fill" Value="{StaticResource Button.BackgroundOverlay.Pressed}"/>
                             <Setter TargetName="LeftShadow" Property="Fill" Value="{StaticResource Button.LeftShadow.Pressed}"/>

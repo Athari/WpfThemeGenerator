@@ -1,7 +1,7 @@
 ﻿<ResourceDictionary
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:th="clr-namespace:Alba.WpfThemeGenerator.Themes">
+        xmlns:at="clr-namespace:Alba.WpfThemeGenerator.Themes.AeroAlt.Attached">
 
     <!-- Colors -->
 
@@ -43,10 +43,10 @@
                         </Border>
                     </Grid>
                     <ControlTemplate.Triggers>
-                        <Trigger Property="th:Chrome.IsHover" Value="True">
+                        <Trigger Property="at:Chrome.IsHover" Value="True">
                             <Setter TargetName="BorderOverlay" Property="Stroke" Value="{StaticResource ListBoxChrome.BorderOverlay.Hover}"/>
                         </Trigger>
-                        <Trigger Property="th:Chrome.IsFocused" Value="True">
+                        <Trigger Property="at:Chrome.IsFocused" Value="True">
                             <Setter TargetName="BorderOverlay" Property="Stroke" Value="{StaticResource ListBoxChrome.BorderOverlay.Focused}"/>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">

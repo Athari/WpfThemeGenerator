@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace Alba.WpfThemeGenerator.Themes
+namespace Alba.WpfThemeGenerator.Themes.AeroAlt.Attached
 {
     public static class Chrome
     {
