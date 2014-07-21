@@ -8,6 +8,7 @@
             <ColumnDefinition Width="120"/>
             <ColumnDefinition Width="120"/>
             <ColumnDefinition Width="120"/>
+            <ColumnDefinition Width="120"/>
         </Grid.ColumnDefinitions>
         <!--<UIElement.RenderTransform>
             <ScaleTransform ScaleX="3" ScaleY="3"/>
@@ -58,6 +59,19 @@
                 <TextBox Text="Disabled" IsEnabled="False" Margin="2"/>
                 <PasswordBox Password="Normal" Margin="2"/>
                 <PasswordBox Password="Disabled" IsEnabled="False" Margin="2"/>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Grid.Column="4" Header="TreeView" Margin="2">
+            <StackPanel>
+                <TreeView Height="100">
+                    <TreeViewItem Header="Root" IsExpanded="True">
+                        <TreeViewItem Header="Item 1">
+                            <TreeViewItem Header="Item 1"/>
+                            <TreeViewItem Header="Item 2"/>
+                        </TreeViewItem>
+                        <TreeViewItem Header="Item 2"/>
+                    </TreeViewItem>
+                </TreeView>
             </StackPanel>
         </GroupBox>
     </Grid>

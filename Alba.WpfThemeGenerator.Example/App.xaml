@@ -9,6 +9,8 @@
                 <ResourceDictionary Source="pack://application:,,,/Alba.WpfThemeGenerator;component/Themes/AeroAlt/Controls/CheckBox.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/Alba.WpfThemeGenerator;component/Themes/AeroAlt/Controls/RadioButton.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/Alba.WpfThemeGenerator;component/Themes/AeroAlt/Controls/TextBox.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/Alba.WpfThemeGenerator;component/Themes/AeroAlt/Controls/PasswordBox.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/Alba.WpfThemeGenerator;component/Themes/AeroAlt/Controls/TreeView.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

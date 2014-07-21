@@ -1,0 +1,8 @@
+﻿<ResourceDictionary
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- Colors -->
+    <SolidColorBrush x:Key="ListBox.Border" Color="#828790"/>
+
+</ResourceDictionary>
