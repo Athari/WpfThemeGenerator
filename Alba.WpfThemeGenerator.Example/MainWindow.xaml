@@ -63,8 +63,8 @@
         </GroupBox>
         <GroupBox Grid.Column="4" Header="TreeView" Margin="2">
             <StackPanel>
-                <TreeView Height="100">
-                    <TreeViewItem Header="Root" IsExpanded="True">
+                <TreeView Height="100" HorizontalContentAlignment="Stretch">
+                    <TreeViewItem Header="Root" IsExpanded="True" IsSelected="True">
                         <TreeViewItem Header="Colors" IsExpanded="True">
                             <TreeViewItem Padding="2">
                                 <TreeViewItem.Header>

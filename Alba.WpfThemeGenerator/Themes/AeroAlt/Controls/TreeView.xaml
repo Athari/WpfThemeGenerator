@@ -182,6 +182,10 @@
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter Property="Foreground" Value="{xx:SystemBrush GrayText}"/>
                         </Trigger>
+                        <Trigger Property="HorizontalContentAlignment" Value="Stretch">
+                            <Setter TargetName="Selection" Property="Grid.ColumnSpan" Value="2"/>
+                            <Setter TargetName="Border" Property="Grid.ColumnSpan" Value="2"/>
+                        </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
