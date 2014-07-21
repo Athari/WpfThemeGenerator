@@ -1,10 +1,12 @@
 ﻿<ResourceDictionary
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:xx="clr-namespace:Alba.WpfThemeGenerator.Markup">
+        xmlns:xx="clr-namespace:Alba.WpfThemeGenerator.Markup"
+        xmlns:th="clr-namespace:Alba.WpfThemeGenerator.Themes">
 
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="../Common.xaml"/>
+        <ResourceDictionary Source="SelectionChrome.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
     <!-- Colors -->
@@ -136,13 +138,13 @@
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="HorizontalContentAlignment" Value="{Binding Path=HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
         <Setter Property="VerticalContentAlignment" Value="{Binding Path=VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
-        <Setter Property="Padding" Value="1,0,0,0"/>
+        <Setter Property="Padding" Value="2,1,2,1"/>
         <Setter Property="Foreground" Value="{xx:SystemBrush ControlText}"/>
         <Setter Property="FocusVisualStyle" Value="{StaticResource TreeViewItem.FocusVisual}"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TreeViewItem}">
-                    <Grid>
+                    <Grid Cursor="Arrow">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition MinWidth="19" Width="Auto"/>
                             <ColumnDefinition Width="Auto"/>
@@ -154,12 +156,19 @@
                         </Grid.RowDefinitions>
                         <ToggleButton x:Name="ArrowButton" ClickMode="Press"
                                 Style="{StaticResource TreeViewItem.ArrowButton}"
-                                IsChecked="{Binding Path=IsExpanded, RelativeSource={RelativeSource TemplatedParent}}"/>
+                                IsChecked="{Binding IsExpanded, RelativeSource={RelativeSource TemplatedParent}}"/>
+                        <ContentControl x:Name="Selection" Grid.Row="0" Grid.Column="1" Style="{StaticResource SelectionChrome}"
+                                Padding="{TemplateBinding Padding}"
+                                th:Chrome.IsSelected="{TemplateBinding IsSelected}"
+                                th:Chrome.IsActive="{TemplateBinding IsSelectionActive}"
+                                th:Chrome.IsHover="{Binding IsMouseOver, ElementName=Border}"/>
                         <Border x:Name="Border" Grid.Row="0" Grid.Column="1" SnapsToDevicePixels="True"
                                 Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}"
-                                BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
-                            <ContentPresenter x:Name="PART_Header" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-                                    ContentSource="Header" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"/>
+                                BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}"
+                                Cursor="{TemplateBinding Cursor}">
+                            <ContentPresenter x:Name="PART_Header" ContentSource="Header"
+                                    SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"/>
                         </Border>
                         <ItemsPresenter x:Name="ItemsHost" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"/>
                     </Grid>
@@ -170,18 +179,6 @@
                         <Trigger Property="HasItems" Value="False">
                             <Setter TargetName="ArrowButton" Property="Visibility" Value="Hidden"/>
                         </Trigger>
-                        <Trigger Property="IsSelected" Value="True">
-                            <Setter TargetName="Border" Property="Background" Value="{xx:SystemBrush Highlight}"/>
-                            <Setter Property="Foreground" Value="{xx:SystemBrush HighlightText}"/>
-                        </Trigger>
-                        <MultiTrigger>
-                            <MultiTrigger.Conditions>
-                                <Condition Property="IsSelected" Value="True"/>
-                                <Condition Property="IsSelectionActive" Value="False"/>
-                            </MultiTrigger.Conditions>
-                            <Setter TargetName="Border" Property="Background" Value="{xx:SystemBrush InactiveSelectionHighlight}"/>
-                            <Setter Property="Foreground" Value="{xx:SystemBrush InactiveSelectionHighlightText}"/>
-                        </MultiTrigger>
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter Property="Foreground" Value="{xx:SystemBrush GrayText}"/>
                         </Trigger>

@@ -4,6 +4,19 @@ namespace Alba.WpfThemeGenerator.Themes
 {
     public static class Chrome
     {
+        public static readonly DependencyProperty IsActiveProperty = DependencyProperty.RegisterAttached(
+            "IsActive", typeof(bool), typeof(Chrome), new PropertyMetadata(false));
+
+        public static void SetIsActive (DependencyObject element, bool value)
+        {
+            element.SetValue(IsActiveProperty, value);
+        }
+
+        public static bool GetIsActive (DependencyObject element)
+        {
+            return (bool)element.GetValue(IsActiveProperty);
+        }
+
         public static readonly DependencyProperty IsCheckedProperty = DependencyProperty.RegisterAttached(
             "IsChecked", typeof(bool?), typeof(Chrome), new PropertyMetadata(false));
 
@@ -67,6 +80,19 @@ namespace Alba.WpfThemeGenerator.Themes
         public static bool GetIsPressed (DependencyObject element)
         {
             return (bool)element.GetValue(IsPressedProperty);
+        }
+
+        public static readonly DependencyProperty IsSelectedProperty = DependencyProperty.RegisterAttached(
+            "IsSelected", typeof(bool), typeof(Chrome), new PropertyMetadata(false));
+
+        public static void SetIsSelected (DependencyObject element, bool value)
+        {
+            element.SetValue(IsSelectedProperty, value);
+        }
+
+        public static bool GetIsSelected (DependencyObject element)
+        {
+            return (bool)element.GetValue(IsSelectedProperty);
         }
     }
 }
