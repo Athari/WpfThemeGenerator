@@ -103,6 +103,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Markup\Converters\BoolToVisibilityConverter.cs" />
     <Compile Include="Markup\Converters\Converters.cs" />
     <Compile Include="Markup\Converters\OrConverter.cs" />
     <Compile Include="Markup\Extensions\SystemBrushExtension.cs" />
