@@ -12,11 +12,11 @@
     <SolidColorBrush x:Key="TreeViewItem.Arrow.Stroke.Unchecked.Normal" Color="#FF989898"/>
     <SolidColorBrush x:Key="TreeViewItem.Arrow.Stroke.Unchecked.MouseOver" Color="#FF1BBBFA"/>
     <SolidColorBrush x:Key="TreeViewItem.Arrow.Stroke.Checked.Normal" Color="#FF262626"/>
-    <SolidColorBrush x:Key="TreeViewItem.Arrow.Stroke.Checked.MouseOver" Color="#FF262626"/>
+    <SolidColorBrush x:Key="TreeViewItem.Arrow.Stroke.Checked.MouseOver" Color="#FF1BBBFA"/>
     <SolidColorBrush x:Key="TreeViewItem.Arrow.Fill.Unchecked.Normal" Color="Transparent"/>
     <SolidColorBrush x:Key="TreeViewItem.Arrow.Fill.Unchecked.MouseOver" Color="Transparent"/>
     <SolidColorBrush x:Key="TreeViewItem.Arrow.Fill.Checked.Normal" Color="#FF595959"/>
-    <SolidColorBrush x:Key="TreeViewItem.Arrow.Fill.Checked.MouseOver" Color="#FF595959"/>
+    <SolidColorBrush x:Key="TreeViewItem.Arrow.Fill.Checked.MouseOver" Color="Transparent"/>
 
     <!-- Images -->
 
