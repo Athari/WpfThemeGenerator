@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Linq;
 using System.Reflection;
 using System.Resources;
 using System.Windows;
@@ -23,6 +24,7 @@ namespace Alba.WpfThemeGenerator.Editor.ViewModels
                 using (var resourceReader = new ResourceReader(stylesAssembly.GetManifestResourceStream(resourceName)))
                     foreach (DictionaryEntry resourceEntry in resourceReader)
                         ResourceDictionaries.Add(new ResourceDictionaryModel(stylesAssembly, ((string)resourceEntry.Key).RemovePostfix(".baml")));
+            ResourceDictionaries.Replace(ResourceDictionaries.OrderBy(d => d.ResourceName).ToList());
         }
     }
 
@@ -56,6 +58,7 @@ namespace Alba.WpfThemeGenerator.Editor.ViewModels
                         Colors.Add(new ColorModel("{0}#{1}".Fmt(key, i), gradientBrush.GradientStops[i].Color));
                 }
             }
+            Colors.Replace(Colors.OrderBy(c => c.Key).ToList());
         }
 
         public override string ToString ()
