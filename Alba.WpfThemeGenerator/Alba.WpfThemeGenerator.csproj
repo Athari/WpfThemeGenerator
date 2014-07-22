@@ -65,6 +65,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Themes\AeroAlt\Controls\ListBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\AeroAlt\Controls\ListBoxChrome.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
