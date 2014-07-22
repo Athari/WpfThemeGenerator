@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".git", ".git", "{3D8FF248-D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alba.WpfThemeGenerator.Example", "Alba.WpfThemeGenerator.Example\Alba.WpfThemeGenerator.Example.csproj", "{0BFB713E-406C-488A-8AB1-502148D3EA34}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alba.WpfThemeGenerator.Editor", "Alba.WpfThemeGenerator.Editor\Alba.WpfThemeGenerator.Editor.csproj", "{90BCF348-E7FC-44EA-B004-2D7FC0B30DEA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +28,10 @@ Global
 		{0BFB713E-406C-488A-8AB1-502148D3EA34}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0BFB713E-406C-488A-8AB1-502148D3EA34}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0BFB713E-406C-488A-8AB1-502148D3EA34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90BCF348-E7FC-44EA-B004-2D7FC0B30DEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90BCF348-E7FC-44EA-B004-2D7FC0B30DEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90BCF348-E7FC-44EA-B004-2D7FC0B30DEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90BCF348-E7FC-44EA-B004-2D7FC0B30DEA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
