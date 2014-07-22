@@ -52,6 +52,7 @@
         <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
         <Setter Property="ScrollViewer.PanningMode" Value="Both"/>
         <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+        <Setter Property="at:AeroStyles.SelectionStyle" Value="{StaticResource SelectionChrome.Aero}"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TreeView}">
@@ -138,9 +139,10 @@
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="HorizontalContentAlignment" Value="{Binding Path=HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
         <Setter Property="VerticalContentAlignment" Value="{Binding Path=VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
-        <Setter Property="Padding" Value="2,1,2,1"/>
+        <Setter Property="Padding" Value="2,0,2,0"/>
         <Setter Property="Foreground" Value="{xx:SystemBrush ControlText}"/>
         <Setter Property="FocusVisualStyle" Value="{StaticResource TreeViewItem.FocusVisual}"/>
+        <Setter Property="at:AeroStyles.SelectionStyle" Value="{Binding Path=(at:AeroStyles.SelectionStyle), RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TreeViewItem}">
@@ -158,18 +160,21 @@
                                 Style="{StaticResource TreeViewItem.ArrowButton}"
                                 IsChecked="{Binding IsExpanded, RelativeSource={RelativeSource TemplatedParent}}"
                                 Visibility="{Binding HasItems, RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static xx:Converters.BoolToVisibleHidden}}"/>
-                        <ContentControl x:Name="Selection" Grid.Row="0" Grid.Column="1" Style="{StaticResource SelectionChrome}"
-                                Padding="{TemplateBinding Padding}"
-                                at:Chrome.IsSelected="{TemplateBinding IsSelected}"
-                                at:Chrome.IsActive="{TemplateBinding IsSelectionActive}"
-                                at:Chrome.IsHover="{Binding IsMouseOver, ElementName=Border}"/>
-                        <Border x:Name="Border" Grid.Row="0" Grid.Column="1" SnapsToDevicePixels="True"
-                                Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}"
+                        <Border x:Name="Border" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" SnapsToDevicePixels="True"
+                                Background="{TemplateBinding Background}"
                                 BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}"
                                 Cursor="{TemplateBinding Cursor}">
-                            <ContentPresenter x:Name="PART_Header" ContentSource="Header"
-                                    SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-                                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"/>
+                            <ContentControl x:Name="PART_Header" IsTabStop="False"
+                                    Style="{TemplateBinding at:AeroStyles.SelectionStyle}"
+                                    Padding="{TemplateBinding Padding}"
+                                    HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                    VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                                    at:Chrome.IsSelected="{TemplateBinding IsSelected}"
+                                    at:Chrome.IsActive="{TemplateBinding IsSelectionActive}"
+                                    at:Chrome.IsHover="{Binding IsMouseOver, ElementName=Border}">
+                                <ContentPresenter ContentSource="Header"
+                                        SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                            </ContentControl>
                         </Border>
                         <ItemsPresenter x:Name="ItemsHost" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"
                                 Visibility="{Binding IsExpanded, RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static xx:Converters.BoolToVisibleCollapsed}}"/>
@@ -178,9 +183,8 @@
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter Property="Foreground" Value="{xx:SystemBrush GrayText}"/>
                         </Trigger>
-                        <Trigger Property="HorizontalContentAlignment" Value="Stretch">
-                            <Setter TargetName="Selection" Property="Grid.ColumnSpan" Value="2"/>
-                            <Setter TargetName="Border" Property="Grid.ColumnSpan" Value="2"/>
+                        <Trigger Property="HorizontalContentAlignment" Value="Left">
+                            <Setter TargetName="Border" Property="Grid.ColumnSpan" Value="1"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

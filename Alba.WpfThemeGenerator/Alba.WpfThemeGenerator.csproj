@@ -123,6 +123,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Themes\AeroAlt\Attached\AeroStyles.cs" />
     <Compile Include="Themes\AeroAlt\Attached\Chrome.cs" />
     <None Include="Themes\Original\Aero\BulletChrome.cs" />
     <None Include="Themes\Original\Aero\ButtonChrome.cs" />

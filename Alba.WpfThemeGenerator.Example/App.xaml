@@ -5,6 +5,7 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/Alba.WpfThemeGenerator;component/Themes/AeroAlt/Controls/SelectionChrome.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/Alba.WpfThemeGenerator;component/Themes/AeroAlt/Controls/Button.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/Alba.WpfThemeGenerator;component/Themes/AeroAlt/Controls/CheckBox.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/Alba.WpfThemeGenerator;component/Themes/AeroAlt/Controls/RadioButton.xaml"/>
