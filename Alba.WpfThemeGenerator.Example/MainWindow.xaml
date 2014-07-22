@@ -89,8 +89,8 @@
                     </TreeViewItem>
                 </TreeView>
                 <TextBlock Text="ListBox" Style="{StaticResource SubHeader}" Margin="2"/>
-                <ListBox Height="110" HorizontalContentAlignment="Stretch" Margin="2">
-                    <ListBoxItem Content="Item 1" IsSelected="True"/>
+                <ListBox Height="110" SelectionMode="Extended" Margin="2">
+                    <ListBoxItem Content="Item 1"/>
                     <ListBoxItem Content="Item 2"/>
                     <ListBoxItem Content="Item 3"/>
                     <ListBoxItem Padding="2">
