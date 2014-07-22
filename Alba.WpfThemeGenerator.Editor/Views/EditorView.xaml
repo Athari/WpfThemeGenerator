@@ -4,10 +4,27 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
         xmlns:vm="clr-namespace:Alba.WpfThemeGenerator.Editor.ViewModels"
+        xmlns:a="urn:alba:framework"
         WindowStartupLocation="CenterScreen"
         Title="Alba WPF Theme Generator"
+        Background="{a:SystemBrush Control}"
         d:DataContext="{d:DesignInstance vm:EditorModel}" d:DesignWidth="800" d:DesignHeight="400">
-    <DockPanel>
-        <!---->
+    <Control.Resources>
+        <DataTemplate DataType="{x:Type vm:ColorModel}">
+            <StackPanel Orientation="Horizontal" Margin="1">
+                <Rectangle Width="16" Height="16" Fill="{Binding Brush}" Margin="2 0"/>
+                <TextBlock Text="{Binding Key}"/>
+            </StackPanel>
+        </DataTemplate>
+    </Control.Resources>
+    <DockPanel LastChildFill="False">
+        <DockPanel DockPanel.Dock="Left" Width="300">
+            <TextBlock DockPanel.Dock="Top" Text="Resource dictionaries" Margin="4 4 4 0"/>
+            <ListBox x:Name="lstResourceDictionaries" ItemsSource="{Binding ResourceDictionaries}" Margin="4"/>
+        </DockPanel>
+        <DockPanel DockPanel.Dock="Left" Width="400">
+            <TextBlock DockPanel.Dock="Top" Text="Colors" Margin="4 4 4 0"/>
+            <ListBox x:Name="lstColors" ItemsSource="{Binding SelectedItem.Colors, ElementName=lstResourceDictionaries}" Margin="4"/>
+        </DockPanel>
     </DockPanel>
 </Window>

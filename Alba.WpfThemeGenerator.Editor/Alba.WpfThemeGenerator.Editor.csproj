@@ -122,6 +122,10 @@
       <Project>{62730B23-450C-4B93-8D5C-F7037DB6D263}</Project>
       <Name>Alba.Framework</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Alba.WpfThemeGenerator\Alba.WpfThemeGenerator.csproj">
+      <Project>{3FDD8D0D-3503-46F5-9981-071071E05767}</Project>
+      <Name>Alba.WpfThemeGenerator</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(SolutionDir)\Build\Common.targets" Condition="Exists('$(SolutionDir)\Build\Common.targets')" />
